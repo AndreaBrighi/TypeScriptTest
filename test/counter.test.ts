@@ -1,26 +1,23 @@
 import { suite, test } from '@testdeck/mocha';
-import * as _chai from 'chai';
+import { should, expect } from 'chai';
 import { mock, instance } from 'ts-mockito';
 import { Counter } from '../src/counter';
-_chai.should();
-@suite class CounterUnitTests {
-
-  private counter: Counter;
-
-  before() {
-    this.counter = new Counter();
-  }
+should();
+@suite 
+export class CounterUnitTests {
 
   @test 'should have value 0 when created'() {
+    const counter = new Counter();
     // Assert
-    this.counter.getCount().should.be.eq(0);
+    expect(counter.getCount()).to.be.eq(0);
   }
 
   @test 'should increment when ask to increase'() {
+    const counter = new Counter();
     // Act
-    this.counter.increment();
+    counter.increment();
     // Assert
-    this.counter.getCount().should.be.eq(1);
+    expect(counter.getCount()).to.be.eq(1);
   }
 
 }
