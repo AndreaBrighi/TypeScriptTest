@@ -2,12 +2,12 @@
 Feature: Counter
 
   Scenario Outline: increment
-    Given A counter starting from 20
-    When Increment
-    Then Counter value should be 21
+    Given A counter starting from <start>
+    When Increment by <step>
+    Then Counter value should be <end>
 
     Examples:
-      | start | end |
-      |  0    |   1 |
-      |  20   |  21 |
-      | 100   | 101 |
+      | start | end | step |
+      |  0    |   1 |   1  |
+      |  20   |  22 |   2  |
+      | 100   | 110 |  10  |

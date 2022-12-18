@@ -9,8 +9,8 @@ class Counter {
         this.count = count ?? 0;
     }
 
-    increment() {
-        this.count++;
+    increment(step: number = 1) {
+        this.count+=step;
     }
 
     getCount() {
