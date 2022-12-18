@@ -1,8 +1,12 @@
 class Counter {
     private count: number;
 
-    constructor() {
-        this.count = 0;
+    constructor();
+
+    constructor(count: number);
+
+    constructor(count?: number) {
+        this.count = count ?? 0;
     }
 
     increment() {

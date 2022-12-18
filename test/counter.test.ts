@@ -6,13 +6,23 @@ should();
 @suite 
 export class CounterUnitTests {
 
-  @test 'should have value 0 when created'() {
+  @test 
+  'should have value 0 when created'() {
     const counter = new Counter();
     // Assert
     expect(counter.getCount()).to.be.eq(0);
   }
 
-  @test 'should increment when ask to increase'() {
+  @test 
+  'should have the input value when created'() {
+    const value = 5;
+    const counter = new Counter(value);
+    // Assert
+    expect(counter.getCount()).to.be.eq(value);
+  }
+
+  @test 
+  'should increment when ask to increase'() {
     const counter = new Counter();
     // Act
     counter.increment();
